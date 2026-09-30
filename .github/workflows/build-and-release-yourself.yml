@@ -52,8 +52,8 @@ jobs:
           fi
 
       - name: Download .deb
-        run: |
-          wget "${{ inputs.tweak_url }}" --no-verbose -O ${{ github.workspace }}/eevee.deb
+        run: | 
+          wget "${{ https://github.com/SideloadLabs/EeveeSpotifyReincarnated/releases/download/v6.6.8/com.eevee.spotify_6.6.8_iphoneos-arm64.deb}}" --no-verbose -O ${{ github.workspace }}/eevee.deb
           file_type=$(file --mime-type -b ${{ github.workspace }}/eevee.deb)
           if [[ "$file_type" != "application/vnd.debian.binary-package" ]]; then
             echo "::error::Not a valid .deb: $file_type"; exit 1
